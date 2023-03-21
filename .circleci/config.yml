@@ -1,11 +1,19 @@
 version: 2.1
 
 jobs:
-  build:
+  build-and-test:
     docker:
       - image: circleci/openjdk:8-jdk
-    working_directory: ~/myapp
     steps:
       - checkout
-      - run: java -version
-      - run: mvn test
+      - run:
+          name: Build
+          command: mvn -B -DskipTests clean package
+      - run:
+          name: Test
+          command: mvn test
+
+workflows:
+  verification:
+    jobs:
+      - build-and-test
