@@ -9,6 +9,3 @@ jobs:
       - checkout
       - run: java -version
       - run: mvn test
-    branches:
-      only:
-        - master
