@@ -23,7 +23,6 @@ public class IPokemonMetadataProviderTest {
 		});
 		// Assert
 		assertEquals(metadata, provider.getPokemonMetadata(0));
-		assertEquals(pokemonIndex, pokemonIndex);
 		
 	}
 
