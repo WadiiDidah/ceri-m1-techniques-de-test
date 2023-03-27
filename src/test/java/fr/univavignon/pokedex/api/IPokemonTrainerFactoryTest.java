@@ -23,9 +23,10 @@ public class IPokemonTrainerFactoryTest {
 	Team team = Team.VALOR;
 	@Before
 	public void initialiser() {
-		trainer = new PokemonTrainer(name, team, ipokedex);
+		
 		MockitoAnnotations.initMocks(this);
-		when(trainerFactory.createTrainer(name, team, pokedexFactory)).thenReturn(trainer);
+		trainer = new PokemonTrainer(name, team,ipokedex);
+		when(trainerFactory.createTrainer(name, team,pokedexFactory)).thenReturn(trainer);
 	}
 
 	@Test
@@ -43,7 +44,7 @@ public class IPokemonTrainerFactoryTest {
 	@Test
 	public void testGetpoxdexFactory() {
 		trainer =  trainerFactory.createTrainer(name, team, pokedexFactory);
-		assertEquals(trainer.getPokedex(),pokedexFactory);
+		assertEquals(trainer.getPokedex(),ipokedex);
 
 	}
 	
