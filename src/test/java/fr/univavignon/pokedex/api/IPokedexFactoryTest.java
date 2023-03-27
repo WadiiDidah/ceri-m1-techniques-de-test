@@ -45,6 +45,7 @@ public class IPokedexFactoryTest {
 		
 		assertEquals(ipokedexFactory.createPokedex(pokemonMetadataProvider, factory), iPokedex);
 		assertEquals(ipokedexFactory.createPokedex(pokemonMetadataProvider, factory).getPokemon(0), iPokedex.getPokemon(0));
+		
 
 	}
 
