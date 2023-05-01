@@ -35,6 +35,15 @@ public class IPokemonTrainerFactoryTest {
 		when(trainerFactory.createTrainer(name, team,pokedexFactory)).thenReturn(trainer);
 	}
 
+	
+	
+	@Test
+	public void CreateTrainer() {
+
+        assertEquals(trainer.getClass(),trainerFactory.createTrainer(name, team, pokedexFactory).getClass());
+
+	}
+	
 	@Test
 	public void testGetNom() {
 
