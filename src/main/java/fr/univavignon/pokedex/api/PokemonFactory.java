@@ -11,7 +11,13 @@ public class PokemonFactory implements IPokemonFactory{
 
 	@Override
 	public Pokemon createPokemon(int index, int cp, int hp, int dust, int candy) {
-		PokemonMetadata pokemonMetadata = null;
+		PokemonMetadata pokemonMetadata ;
+		  try {
+	            pokemonMetadata = pokemonMetadataProvider.getPokemonMetadata(index);
+
+	        } catch (PokedexException e) {
+	            return null;
+	        }
 		double iv=50.0;
 		
 		if(index==0) {

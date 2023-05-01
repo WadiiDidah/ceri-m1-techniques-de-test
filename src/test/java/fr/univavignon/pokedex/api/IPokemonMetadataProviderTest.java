@@ -2,6 +2,7 @@ package fr.univavignon.pokedex.api;
 
 import org.mockito.Mockito;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThrows;
@@ -10,41 +11,36 @@ import org.mockito.ArgumentMatcher.*;
 import static org.mockito.Mockito.*;
 
 public class IPokemonMetadataProviderTest {
+	
+	
+	
+	IPokemonMetadataProvider pokemonMetadataProvider;
+	Pokedex pokedex;
+	Pokemon bulbizarre;
+	Pokemon aquali;
+
+	@Before
+	public void init() {
+		
+		
+		bulbizarre = new Pokemon(0, "Bulbizarre", 126, 126, 90, 613, 64, 4000, 4, 56);
+		aquali = new Pokemon(133, "Aquali", 186, 168, 260, 2729, 202, 5000, 4, 100);
+		pokemonMetadataProvider = new PokemonMetadataProvider();
+	}
 	@Test
 	public void Test_GetPokemonMetadata_ReturnsValidMetadata() throws PokedexException {
 		// Arrange
-		int pokemonIndex = 1;
-		IPokemonMetadataProvider provider = Mockito.mock(IPokemonMetadataProvider.class);
-	    PokemonMetadata metadata = new PokemonMetadata(0, "Bulbizarre",126,126, 90);
-		when(provider.getPokemonMetadata(anyInt())).thenAnswer(input -> {
-			int index = input.getArgument(0);
-			return metadata;	
-
-		});
-		// Assert
-		assertEquals(metadata, provider.getPokemonMetadata(0));
+		 assertEquals(bulbizarre.getIndex(),pokemonMetadataProvider.getPokemonMetadata(0).getIndex());
+	     assertEquals(aquali.getDefense(),pokemonMetadataProvider.getPokemonMetadata(133).getDefense());
+		
 		
 	}
 
 	@Test
 	public void Test_GetPokemonMetadata_with_invalideIndex() throws PokedexException {
-		// Arrange
-		int pokemonIndex = 1;
-		IPokemonMetadataProvider provider = Mockito.mock(IPokemonMetadataProvider.class);
-	    PokemonMetadata metadata = new PokemonMetadata(0, "Bulbizarre",126,126, 90);
-		when(provider.getPokemonMetadata(anyInt())).thenAnswer(input -> {
-			int index = input.getArgument(0);
-			if (index < 0) {
-				throw new PokedexException("Veuillez entrer un index  entre 0 et 150");
-			} else if (index > 150) {
-				throw new PokedexException("index doit être inférieur à 150");
-			}
-			return metadata;
-
-		});
 		// Assert
-		assertThrows(PokedexException.class,() -> {provider.getPokemonMetadata(-1);});
-		assertThrows(PokedexException.class,() -> {provider.getPokemonMetadata(151);});
+		assertThrows(PokedexException.class, () -> pokemonMetadataProvider.getPokemonMetadata(190));
+	    assertThrows(PokedexException.class, () -> pokemonMetadataProvider.getPokemonMetadata(-50));
 	}
 
 }

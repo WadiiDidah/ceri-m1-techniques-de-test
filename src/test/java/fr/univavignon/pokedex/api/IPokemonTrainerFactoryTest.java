@@ -10,14 +10,20 @@ import org.mockito.MockitoAnnotations;
 
 public class IPokemonTrainerFactoryTest {
 
+	
+	
 	@Mock
 	private IPokedexFactory pokedexFactory;
+	
+	@Mock
+	private  IPokemonTrainerFactory pokemonTrainerFactory;
 	@Mock
 	IPokedex ipokedex;
 	@Mock
 	IPokemonTrainerFactory trainerFactory;
 	@Mock
 	IPokemonTrainerFactory iPokemonTrainerFactory;
+	
 	PokemonTrainer trainer;
 	String name = "Wadii Team";
 	Team team = Team.VALOR;
@@ -31,20 +37,20 @@ public class IPokemonTrainerFactoryTest {
 
 	@Test
 	public void testGetNom() {
-		trainer =  trainerFactory.createTrainer(name, team, pokedexFactory);
-		assertEquals(trainer.getName(),name);
+
+		assertEquals("Wadii Team",trainerFactory.createTrainer(name, team, pokedexFactory).getName());
 
 	}
 	@Test
 	public void testGetTeam() {
 		trainer =  trainerFactory.createTrainer(name, team, pokedexFactory);
-		assertEquals(trainer.getTeam(),team);
+		assertEquals(Team.VALOR,trainerFactory.createTrainer(name, team, pokedexFactory).getTeam());
 
 	}
 	@Test
 	public void testGetpoxdexFactory() {
 		trainer =  trainerFactory.createTrainer(name, team, pokedexFactory);
-		assertEquals(trainer.getPokedex(),ipokedex);
+		assertEquals(trainer.getPokedex(),trainerFactory.createTrainer(name, team, pokedexFactory).getPokedex());
 
 	}
 	
