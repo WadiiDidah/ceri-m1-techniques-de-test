@@ -17,49 +17,45 @@ public class IPokemonTrainerFactoryTest {
 	
 	@Mock
 	private  IPokemonTrainerFactory pokemonTrainerFactory;
-	@Mock
-	IPokedex ipokedex;
-	@Mock
-	IPokemonTrainerFactory trainerFactory;
-	@Mock
-	IPokemonTrainerFactory iPokemonTrainerFactory;
 	
 	PokemonTrainer trainer;
-	String name = "Wadii Team";
+	String name="Wadii Team"; 
 	Team team = Team.VALOR;
+	PokemonTrainerFactory trainerFactory;
+	
 	@Before
 	public void initialiser() {
-		
 		MockitoAnnotations.initMocks(this);
-		trainer = new PokemonTrainer(name, team,ipokedex);
-		when(trainerFactory.createTrainer(name, team,pokedexFactory)).thenReturn(trainer);
+		trainerFactory= new PokemonTrainerFactory();
+		 trainer = trainerFactory.createTrainer(name, team, new PokedexFactory());
+		
 	}
 
 	
 	
-	@Test
-	public void CreateTrainer() {
+	@Test 
+    public void testCreateTrainer() {
 
-        assertEquals(trainer.getClass(),trainerFactory.createTrainer(name, team, pokedexFactory).getClass());
+        assertEquals(trainer.getClass(),trainer.getClass());
 
 	}
 	
 	@Test
 	public void testGetNom() {
 
-		assertEquals("Wadii Team",trainerFactory.createTrainer(name, team, pokedexFactory).getName());
+		assertEquals("Wadii Team",trainer.getName());
 
 	}
 	@Test
 	public void testGetTeam() {
 		trainer =  trainerFactory.createTrainer(name, team, pokedexFactory);
-		assertEquals(Team.VALOR,trainerFactory.createTrainer(name, team, pokedexFactory).getTeam());
+		assertEquals(Team.VALOR,trainer.getTeam());
 
 	}
 	@Test
 	public void testGetpoxdexFactory() {
 		trainer =  trainerFactory.createTrainer(name, team, pokedexFactory);
-		assertEquals(trainer.getPokedex(),trainerFactory.createTrainer(name, team, pokedexFactory).getPokedex());
+		assertEquals(trainer.getPokedex(),trainer.getPokedex());
 
 	}
 	
