@@ -10,10 +10,10 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Build
+          name: Construire
           command: mvn -B -DskipTests clean package
       - run:
-          name: Test
+          name: Tester
           command: mvn test
       - codecov/upload
       - attach_workspace:
