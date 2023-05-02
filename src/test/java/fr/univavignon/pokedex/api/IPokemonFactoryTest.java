@@ -24,22 +24,22 @@ public class IPokemonFactoryTest {
 	public void init() {
 		factory = new PokemonFactory();
 		pokemonMetadataProvider = new PokemonMetadataProvider();
-		bulbizarre = new Pokemon(0, "Bulbizarre", 126, 126, 90, 613, 64, 4000, 4, 56);
-		aquali = new Pokemon(133, "Aquali", 186, 168, 260, 2729, 202, 5000, 4, 100);
+		bulbizarre = new Pokemon(133, "Bulbizarre", 126, 126, 90, 613, 64, 4000, 4, 56);
+		aquali = new Pokemon(0, "Aquali", 186, 168, 260, 2729, 202, 5000, 4, 100);
 		pokemonMetadataProvider = new PokemonMetadataProvider();
 	}
 
+	
 	@Test
 	public void createAquali() throws PokedexException {
+	    double delta = 0.0001;
+		Assert.assertEquals(aquali.getCp(),factory.createPokemon(0,2729,  202,5000, 4).getCp());
+		Assert.assertEquals(aquali.getHp(),factory.createPokemon(0,2729,  202,5000, 4).getHp());
+		Assert.assertEquals(aquali.getIndex(),factory.createPokemon(0,2729,  202,5000, 4).getIndex());
+		Assert.assertEquals(aquali.getCandy(),factory.createPokemon(0,2729,  202,5000, 4).getCandy());
+		Assert.assertEquals(aquali.getDust(),factory.createPokemon(0,2729,  202,5000, 4).getDust());
+		Assert.assertEquals(aquali.getIv(),factory.createPokemon(0,2729,  202,5000, 4).getIv(),delta);
 
-		Assert.assertEquals(aquali.getCp(), aquali.getCp());
-		Assert.assertEquals(aquali.getAttack(), aquali.getAttack());
-		Assert.assertEquals(aquali.getDefense(), aquali.getDefense());
-		Assert.assertEquals(aquali.getCandy(), aquali.getCandy());
-		Assert.assertEquals(aquali.getIndex(), aquali.getIndex());
-		Assert.assertEquals(aquali.getStamina(), aquali.getStamina());
-		Assert.assertEquals(aquali.getDust(), aquali.getDust());
-		Assert.assertEquals(aquali.getHp(), aquali.getHp());
 
 	}
 
