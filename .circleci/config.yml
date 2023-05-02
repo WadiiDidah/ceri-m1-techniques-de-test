@@ -1,7 +1,7 @@
 version: 2.1
 orbs:
   codecov: codecov/codecov@3.2.4
-  
+  gh-pages: circleci/gh-pages@1.1.1
 
 jobs:
   build-and-test:
@@ -16,8 +16,38 @@ jobs:
           name: Test
           command: mvn test
       - codecov/upload
+      - attach_workspace:
+          at: /tmp/workspace
+      - store_artifacts:
+          path: target/site/apidocs/
+          destination: javadoc
+  generate-javadoc:
+    docker:
+      - image: circleci/openjdk:11.0
+    steps:
+      - checkout
+      - run:
+          name: Generate Javadoc
+          command: mvn javadoc:javadoc
+      - persist_to_workspace:
+          root: /tmp/workspace
+          paths:
+            - target/site/apidocs/
+          name: javadoc
 
 workflows:
   verification:
     jobs:
       - build-and-test
+      - generate-javadoc:
+          requires:
+            - build-and-test
+          filters:
+            branches:
+              only: master
+      - gh-pages/deploy:
+          requires:
+            - generate-javadoc
+          filters:
+            branches:
+              only: master
