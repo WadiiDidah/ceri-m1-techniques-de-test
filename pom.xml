@@ -59,8 +59,27 @@
         </executions>
       </plugin>
 			
-		</plugins>
-		<testSourceDirectory>src/test/java</testSourceDirectory>
+	<plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-checkstyle-plugin</artifactId>
+      <version>3.1.1</version>
+      <executions>
+        <execution>
+          <phase>verify</phase>
+          <goals>
+            <goal>check</goal>
+          </goals>
+        </execution>
+      </executions>
+      <configuration>
+        <configLocation>checkstyle.xml</configLocation>
+        <failOnViolation>true</failOnViolation>
+        <consoleOutput>true</consoleOutput>
+      </configuration>
+    </plugin>
+			
+	</plugins>
+	<testSourceDirectory>src/test/java</testSourceDirectory>
 	</build>
 	<dependencies>
 		<dependency>
