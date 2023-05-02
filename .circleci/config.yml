@@ -1,7 +1,9 @@
+# config.yml
+
 version: 2.1
+
 orbs:
   codecov: codecov/codecov@3.2.4
-  gh-pages: circleci/gh-pages@1.1.1
 
 jobs:
   build-and-test:
@@ -45,9 +47,38 @@ workflows:
           filters:
             branches:
               only: master
-      - gh-pages/deploy:
+      - deploy-gh-pages:
           requires:
             - generate-javadoc
+          filters:
+            branches:
+              only: master
+
+# publish-orb.yml
+
+version: 2.1
+
+orbs:
+  gh-pages: circleci/gh-pages@1.1.1
+
+jobs:
+  build:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - run:
+          name: Publish orb
+          command: |
+            mkdir -p $HOME/.circleci
+            echo -n $CIRCLECI_ORB_REGISTRY_TOKEN > $HOME/.circleci/orb_token
+            circleci orb publish orb.yml circleci/gh-pages@1.1.1
+
+workflows:
+  version: 2
+  build-and-publish:
+    jobs:
+      - build:
           filters:
             branches:
               only: master
