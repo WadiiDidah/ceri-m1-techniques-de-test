@@ -95,7 +95,7 @@ public class IPokedexTest {
 		
 		 assertEquals(pokedex.getPokemons(PokemonComparators.CP).get(0).getName(),pokemon3.getName());
 		 assertEquals(pokedex.getPokemons(PokemonComparators.CP).get(1).getName(),pokemon4.getName());
-		 assertEquals(pokedex.getPokemons(PokemonComparators.CP).get(2).getName(),pokemon3.getName());
+		 assertEquals(pokedex.getPokemons(PokemonComparators.CP).get(2).getName(),pokemon1.getName());
 
 	    
 		
