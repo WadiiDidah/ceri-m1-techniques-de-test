@@ -54,10 +54,6 @@ workflows:
             branches:
               only: master
 
-# publish-orb.yml
-
-version: 2.1
-
 orbs:
   gh-pages: circleci/gh-pages@1.1.1
 
