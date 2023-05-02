@@ -6,14 +6,20 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Pokedex implements IPokedex {
-	private final List<Pokemon> pokemons;
+	private final List<Pokemon> pokemons= new ArrayList<>();;
 	IPokemonMetadataProvider pokemonmetadataProvider;
 	IPokemonFactory pokemonFactory;
+	
+	
+	 public Pokedex() {
+		
+	    
+	 }
 
 	public Pokedex(IPokemonMetadataProvider metadataProvider, IPokemonFactory pokemonFactory) {
 		this.pokemonmetadataProvider = metadataProvider;
 		this.pokemonFactory = pokemonFactory;
-		pokemons = new ArrayList<>();
+		
 	}
 
 	@Override
