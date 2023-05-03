@@ -1,12 +1,10 @@
 version: 2.1
 orbs:
   codecov: codecov/codecov@3.2.4
-  
-
 jobs:
   build-and-test:
     docker:
-      - image: circleci/openjdk:11.0
+      - image: cimg/openjdk:11.0
     steps:
       - checkout
       - run:
@@ -16,8 +14,35 @@ jobs:
           name: Test
           command: mvn test
       - codecov/upload
-
+  docs-deploy:
+    docker:
+      - image: node:8.10.0
+    steps:
+      - checkout
+      - attach_workspace:
+          at: target/site
+      - run:
+          name: Install and configure dependencies
+          command: |
+            npm install -g --silent gh-pages@2.0.1
+            git config user.email "didahwadii05@gmail.com"
+            git config user.name "wadiididah"
+      - add_ssh_keys:
+          fingerprints:
+            - "26:38:08:6e:8d:ff:31:58:3f:31:0d:be:02:ba:87:03"
+      - run:
+          name: Deploy docs to gh-pages branch
+          command: gh-pages --dist target/site/apidocs
 workflows:
-  verification:
+  sample:
     jobs:
-      - build-and-test
+      - build-and-test:
+          filters:
+            branches:
+              only: master
+      - docs-deploy:
+          requires:
+            - build-and-test
+          filters:
+              branches:
+                only: master
