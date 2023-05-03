@@ -29,7 +29,7 @@ jobs:
             git config user.name "wadiididah"
       - add_ssh_keys:
           fingerprints:
-            - "26:38:08:6e:8d:ff:31:58:3f:31:0d:be:02:ba:87:03"
+            - "a8:bb:6a:5a:b7:5a:49:46:9f:92:38:fd:c8:62:24:2e"
       - run:
           name: Deploy docs to gh-pages branch
           command: gh-pages --dist target/site/apidocs
