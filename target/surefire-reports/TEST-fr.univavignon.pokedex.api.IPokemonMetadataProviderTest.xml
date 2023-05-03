@@ -26,7 +26,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 11"/>
-    <property name="classworlds.conf" value="C:\Users\etudiant\eclipse-workspace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf184657371447330669.tmp"/>
+    <property name="classworlds.conf" value="C:\Users\etudiant\eclipse-workspace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf10092020566226356499.tmp"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
     <property name="java.library.path" value="C:\Users\etudiant\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.6.v20230204-1729\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Users/etudiant/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.6.v20230204-1729/jre/bin/server;C:/Users/etudiant/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.6.v20230204-1729/jre/bin;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Users\etudiant\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\etudiant\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\etudiant\AppData\Local\GitHubDesktop\bin;C:\WINDOWS\system32;;."/>
     <property name="jdk.debug" value="release"/>
@@ -58,7 +58,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="java.vendor.version" value="Temurin-17.0.6+10"/>
-    <property name="m2e.build.project.data.socket.port" value="54115"/>
+    <property name="m2e.build.project.data.socket.port" value="55990"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
   <testcase classname="fr.univavignon.pokedex.api.IPokemonMetadataProviderTest" name="Test_GetPokemonMetadata_with_invalideIndex" time="0"/>

@@ -1,5 +1,7 @@
 @options
 @packages
+-classpath
+'C:/Users/etudiant/.m2/repository/org/apache/commons/commons-collections4/4.0/commons-collections4-4.0.jar'
 -encoding
 'UTF-8'
 -protected
@@ -23,22 +25,23 @@
 -windowtitle
 'java-project 1.0-SNAPSHOT API'
 fr.univavignon.pokedex.api
-C:\Users\etudiant\techniqueTest\ceri-m1-techniques-de-test\src\main\java = 1679399928919
-C:\Users\etudiant\techniqueTest\ceri-m1-techniques-de-test\target\generated-sources\annotations = 1683099921087
-C:\Users\etudiant\techniqueTest\ceri-m1-techniques-de-test\target\apidocs\allclasses-index.html = 1683099931284
-C:\Users\etudiant\techniqueTest\ceri-m1-techniques-de-test\target\apidocs\allpackages-index.html = 1683099931288
-C:\Users\etudiant\techniqueTest\ceri-m1-techniques-de-test\target\apidocs\element-list = 1683099931052
-C:\Users\etudiant\techniqueTest\ceri-m1-techniques-de-test\target\apidocs\help-doc.html = 1683099931348
-C:\Users\etudiant\techniqueTest\ceri-m1-techniques-de-test\target\apidocs\index-all.html = 1683099931333
-C:\Users\etudiant\techniqueTest\ceri-m1-techniques-de-test\target\apidocs\index.html = 1683099931339
-C:\Users\etudiant\techniqueTest\ceri-m1-techniques-de-test\target\apidocs\jquery-ui.overrides.css = 1683099931390
-C:\Users\etudiant\techniqueTest\ceri-m1-techniques-de-test\target\apidocs\member-search-index.js = 1683099931296
-C:\Users\etudiant\techniqueTest\ceri-m1-techniques-de-test\target\apidocs\module-search-index.js = 1683099931290
-C:\Users\etudiant\techniqueTest\ceri-m1-techniques-de-test\target\apidocs\overview-tree.html = 1683099931255
-C:\Users\etudiant\techniqueTest\ceri-m1-techniques-de-test\target\apidocs\package-search-index.js = 1683099931293
-C:\Users\etudiant\techniqueTest\ceri-m1-techniques-de-test\target\apidocs\script.js = 1683099931353
-C:\Users\etudiant\techniqueTest\ceri-m1-techniques-de-test\target\apidocs\search.js = 1683099931356
-C:\Users\etudiant\techniqueTest\ceri-m1-techniques-de-test\target\apidocs\serialized-form.html = 1683099931106
-C:\Users\etudiant\techniqueTest\ceri-m1-techniques-de-test\target\apidocs\stylesheet.css = 1683099931351
-C:\Users\etudiant\techniqueTest\ceri-m1-techniques-de-test\target\apidocs\tag-search-index.js = 1683099931298
-C:\Users\etudiant\techniqueTest\ceri-m1-techniques-de-test\target\apidocs\type-search-index.js = 1683099931294
+C:\Users\etudiant\.m2\repository\org\apache\commons\commons-collections4\4.0\commons-collections4-4.0.jar = 1683106051292
+C:\Users\etudiant\techniqueTest\ceri-m1-techniques-de-test\src\main\java = 1683106166687
+C:\Users\etudiant\techniqueTest\ceri-m1-techniques-de-test\target\generated-sources\annotations = 1683106269946
+C:\Users\etudiant\techniqueTest\ceri-m1-techniques-de-test\target\apidocs\allclasses-index.html = 1683106280487
+C:\Users\etudiant\techniqueTest\ceri-m1-techniques-de-test\target\apidocs\allpackages-index.html = 1683106280493
+C:\Users\etudiant\techniqueTest\ceri-m1-techniques-de-test\target\apidocs\element-list = 1683106280231
+C:\Users\etudiant\techniqueTest\ceri-m1-techniques-de-test\target\apidocs\help-doc.html = 1683106280548
+C:\Users\etudiant\techniqueTest\ceri-m1-techniques-de-test\target\apidocs\index-all.html = 1683106280539
+C:\Users\etudiant\techniqueTest\ceri-m1-techniques-de-test\target\apidocs\index.html = 1683106280542
+C:\Users\etudiant\techniqueTest\ceri-m1-techniques-de-test\target\apidocs\jquery-ui.overrides.css = 1683106280585
+C:\Users\etudiant\techniqueTest\ceri-m1-techniques-de-test\target\apidocs\member-search-index.js = 1683106280501
+C:\Users\etudiant\techniqueTest\ceri-m1-techniques-de-test\target\apidocs\module-search-index.js = 1683106280495
+C:\Users\etudiant\techniqueTest\ceri-m1-techniques-de-test\target\apidocs\overview-tree.html = 1683106280442
+C:\Users\etudiant\techniqueTest\ceri-m1-techniques-de-test\target\apidocs\package-search-index.js = 1683106280497
+C:\Users\etudiant\techniqueTest\ceri-m1-techniques-de-test\target\apidocs\script.js = 1683106280560
+C:\Users\etudiant\techniqueTest\ceri-m1-techniques-de-test\target\apidocs\search.js = 1683106280563
+C:\Users\etudiant\techniqueTest\ceri-m1-techniques-de-test\target\apidocs\serialized-form.html = 1683106280279
+C:\Users\etudiant\techniqueTest\ceri-m1-techniques-de-test\target\apidocs\stylesheet.css = 1683106280551
+C:\Users\etudiant\techniqueTest\ceri-m1-techniques-de-test\target\apidocs\tag-search-index.js = 1683106280502
+C:\Users\etudiant\techniqueTest\ceri-m1-techniques-de-test\target\apidocs\type-search-index.js = 1683106280499

@@ -23,14 +23,14 @@ public class PokemonFactory implements IPokemonFactory{
 		if(index==0) {
 			iv=100.0;
 		}
-		else if(index==100) {
+		if(index==100) {
 			iv=56.0;
 		}
 		try {
 			 pokemonMetadata= 	pokemonMetadataProvider.getPokemonMetadata(index);
 		} catch (PokedexException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			return null;
 		}
 		return new Pokemon(index,pokemonMetadata.getName(),pokemonMetadata.getAttack(),pokemonMetadata.getDefense(),pokemonMetadata.getStamina(), cp, hp, dust,candy,iv);
 		
