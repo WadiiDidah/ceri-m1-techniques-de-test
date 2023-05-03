@@ -6,68 +6,69 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Pokedex implements IPokedex {
-<span class="fc" id="L9">	private final List&lt;Pokemon&gt; pokemons= new ArrayList&lt;&gt;();;</span>
+	
+<span class="fc" id="L10">	private final List&lt;Pokemon&gt; pokemons= new ArrayList&lt;&gt;();;</span>
 	IPokemonMetadataProvider pokemonmetadataProvider;
 	IPokemonFactory pokemonFactory;
 	
 	
-<span class="fc" id="L14">	 public Pokedex() {</span>
+<span class="fc" id="L15">	 public Pokedex() {</span>
 		
 	    
-<span class="fc" id="L17">	 }</span>
+<span class="fc" id="L18">	 }</span>
 
-<span class="fc" id="L19">	public Pokedex(IPokemonMetadataProvider metadataProvider, IPokemonFactory pokemonFactory) {</span>
-<span class="fc" id="L20">		this.pokemonmetadataProvider = metadataProvider;</span>
-<span class="fc" id="L21">		this.pokemonFactory = pokemonFactory;</span>
+<span class="fc" id="L20">	public Pokedex(IPokemonMetadataProvider metadataProvider, IPokemonFactory pokemonFactory) {</span>
+<span class="fc" id="L21">		this.pokemonmetadataProvider = metadataProvider;</span>
+<span class="fc" id="L22">		this.pokemonFactory = pokemonFactory;</span>
 		
-<span class="fc" id="L23">	}</span>
+<span class="fc" id="L24">	}</span>
 
 	@Override
 	public PokemonMetadata getPokemonMetadata(int index) throws PokedexException {
 
 		// TODO Auto-generated method stub
-<span class="nc" id="L29">		return pokemonmetadataProvider.getPokemonMetadata(index);</span>
+<span class="nc" id="L30">		return pokemonmetadataProvider.getPokemonMetadata(index);</span>
 	}
 
 	@Override
 	public Pokemon createPokemon(int index, int cp, int hp, int dust, int candy) {
 		// TODO Auto-generated method stub
-<span class="nc" id="L35">		return pokemonFactory.createPokemon(index, cp, hp, dust, candy);</span>
+<span class="nc" id="L36">		return pokemonFactory.createPokemon(index, cp, hp, dust, candy);</span>
 	}
 
 	@Override
 	public int size() {
 		
-<span class="fc" id="L41">		return this.pokemons.size();</span>
+<span class="fc" id="L42">		return this.pokemons.size();</span>
 	}
 
 	@Override
 	public int addPokemon(Pokemon pokemon) {
 		// TODO Auto-generated method stub
-<span class="fc" id="L47">		 this.pokemons.add(pokemon);</span>
-<span class="fc" id="L48">		return pokemons.size();</span>
+<span class="fc" id="L48">		 this.pokemons.add(pokemon);</span>
+<span class="fc" id="L49">		return pokemons.size();</span>
 	}
 
 	@Override
 	public Pokemon getPokemon(int id) throws PokedexException {
-<span class="pc bpc" id="L53" title="1 of 4 branches missed.">		if (id &lt; 0 || id &gt;= this.pokemons.size()) {</span>
-<span class="fc" id="L54">            throw new PokedexException(&quot;index est invalide: &quot; + id);</span>
+<span class="pc bpc" id="L54" title="1 of 4 branches missed.">		if (id &lt; 0 || id &gt;= this.pokemons.size()) {</span>
+<span class="fc" id="L55">            throw new PokedexException(&quot;index est invalide: &quot; + id);</span>
         }
-<span class="fc" id="L56">        return this.pokemons.get(id);</span>
+<span class="fc" id="L57">        return this.pokemons.get(id);</span>
 	}
 
 	@Override
 	public List&lt;Pokemon&gt; getPokemons() {
 		// TODO Auto-generated method stub
 		
-<span class="fc" id="L63">		 return Collections.unmodifiableList(this.pokemons);</span>
+<span class="fc" id="L64">		 return Collections.unmodifiableList(this.pokemons);</span>
 	}
 
 	@Override
 	public List&lt;Pokemon&gt; getPokemons(Comparator&lt;Pokemon&gt; order) {
-<span class="fc" id="L68">		 List&lt;Pokemon&gt; pokemonstrie = new ArrayList&lt;&gt;(this.pokemons);</span>
-<span class="fc" id="L69">	     Collections.sort(pokemonstrie, order);</span>
-<span class="fc" id="L70">	     return Collections.unmodifiableList(pokemonstrie);</span>
+<span class="fc" id="L69">		 List&lt;Pokemon&gt; pokemonstrie = new ArrayList&lt;&gt;(this.pokemons);</span>
+<span class="fc" id="L70">	     Collections.sort(pokemonstrie, order);</span>
+<span class="fc" id="L71">	     return Collections.unmodifiableList(pokemonstrie);</span>
 	}
 
 }

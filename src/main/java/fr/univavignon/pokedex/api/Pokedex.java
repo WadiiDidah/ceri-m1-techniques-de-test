@@ -6,6 +6,7 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Pokedex implements IPokedex {
+	
 	private final List<Pokemon> pokemons= new ArrayList<>();;
 	IPokemonMetadataProvider pokemonmetadataProvider;
 	IPokemonFactory pokemonFactory;
@@ -35,7 +36,7 @@ public class Pokedex implements IPokedex {
 		return pokemonFactory.createPokemon(index, cp, hp, dust, candy);
 	}
 
-	
+	@Override
 	public int size() {
 		
 		return this.pokemons.size();
