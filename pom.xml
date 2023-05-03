@@ -112,7 +112,7 @@
                         </goals>
                     </execution>
                 </executions>
-        </plugin>
+            </plugin>
 			
 	</plugins>
 	<testSourceDirectory>src/test/java</testSourceDirectory>
