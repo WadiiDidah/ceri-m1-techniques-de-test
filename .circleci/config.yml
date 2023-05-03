@@ -20,7 +20,7 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          at: target/site
+          at: target
       - run:
           name: Install and configure dependencies
           command: |
@@ -32,7 +32,7 @@ jobs:
             - "a8:bb:6a:5a:b7:5a:49:46:9f:92:38:fd:c8:62:24:2e"
       - run:
           name: Deploy docs to gh-pages branch
-          command: gh-pages --dist target/site/apidocs
+          command: gh-pages --dist target/apidocs
 workflows:
   sample:
     jobs:
